@@ -26,8 +26,8 @@ public class Calculator_4 {
         String[] operators = new String[tokens.length / 2];
 
         // 3. 연산자와 피연산자를 분리
-        for(int i = 0; i < tokens.length; i++) {
-            if(i % 2 == 0) {
+        for (int i = 0; i < tokens.length; i++) {
+            if (i % 2 == 0) {
                 operands[i / 2] = tokens[i];
             } else {
                 operators[i / 2] = tokens[i];
@@ -37,29 +37,23 @@ public class Calculator_4 {
         // 4. 순차적으로 연산 수행
         int result = Integer.parseInt(operands[0]);
 
-        for(int i = 0; i < operators.length; i++) {
+        for (int i = 0; i < operators.length; i++) {
             String operator = operators[i];
             String rightOperand = operands[i + 1];
 
-            if("+".equals(operator)) {
+            if ("+".equals(operator)) {
                 System.out.println("덧셈 연산 : " + result + " + " + rightOperand);
 
                 result = result + Integer.parseInt(rightOperand);
-            }
-
-            if("-".equals(operator)) {
+            } else if ("-".equals(operator)) {
                 System.out.println("뺄셈 연산 : " + result + " - " + rightOperand);
 
                 result = result - Integer.parseInt(rightOperand);
-            }
-
-            if("*".equals(operator)) {
+            } else if ("*".equals(operator)) {
                 System.out.println("곱셈 연산 : " + result + " * " + rightOperand);
 
                 result = result * Integer.parseInt(rightOperand);
-            }
-
-            if("/".equals(operator)) {
+            } else if ("/".equals(operator)) {
                 System.out.println("나누기 연산 : " + result + " / " + rightOperand);
 
                 result = result / Integer.parseInt(rightOperand);

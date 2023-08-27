@@ -26,34 +26,28 @@ public class Calculator_3 {
         String rightOperand = tokens[2];
 
         // 3. 연산자에 따라 연산 수행
-
-        int result = 0;
-
-        if("+".equals(operator)) {
+        if ("+".equals(operator)) {
             System.out.println("덧셈 연산 : " + leftOperand + " + " + rightOperand);
 
-            result = Integer.parseInt(leftOperand) + Integer.parseInt(rightOperand);
-        }
-
-        if("-".equals(operator)) {
+            int result = Integer.parseInt(leftOperand) + Integer.parseInt(rightOperand);
+            System.out.println("결과 = " + result);
+        } else if ("-".equals(operator)) {
             System.out.println("뺄셈 연산 : " + leftOperand + " - " + rightOperand);
 
-            result = Integer.parseInt(leftOperand) - Integer.parseInt(rightOperand);
-        }
-
-        if("*".equals(operator)) {
+            int result = Integer.parseInt(leftOperand) - Integer.parseInt(rightOperand);
+            System.out.println("결과 = " + result);
+        } else if ("*".equals(operator)) {
             System.out.println("곱셈 연산 : " + leftOperand + " * " + rightOperand);
 
-            result = Integer.parseInt(leftOperand) * Integer.parseInt(rightOperand);
-        }
-
-        if("/".equals(operator)) {
+            int result = Integer.parseInt(leftOperand) * Integer.parseInt(rightOperand);
+            System.out.println("결과 = " + result);
+        } else if ("/".equals(operator)) {
             System.out.println("나누기 연산 : " + leftOperand + " / " + rightOperand);
 
-            result = Integer.parseInt(leftOperand) / Integer.parseInt(rightOperand);
+            int result = Integer.parseInt(leftOperand) / Integer.parseInt(rightOperand);
+            System.out.println("결과 = " + result);
+        } else {
+            System.out.println("알 수 없는 연산자입니다.");
         }
-
-        // 4. 결과 출력
-        System.out.println("결과 = " + result);
     }
 }
