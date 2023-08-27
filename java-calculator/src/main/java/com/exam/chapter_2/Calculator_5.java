@@ -1,4 +1,4 @@
-package com.exam.chapter_1;
+package com.exam.chapter_2;
 
 import java.util.Scanner;
 
