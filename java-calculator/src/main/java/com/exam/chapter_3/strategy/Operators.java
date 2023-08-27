@@ -1,6 +1,6 @@
 package com.exam.chapter_3.strategy;
 
-class Operators {
+public class Operators {
     public static Operator fromSymbol(String symbol) {
         return switch (symbol) {
             case "+" -> new Add();
