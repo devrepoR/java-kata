@@ -3,8 +3,8 @@ package com.exam.chapter_1;
 import java.util.Scanner;
 
 /**
- * 1. 산술 연산자
- * 2. 입력 및 출력
+ * 1. 입력 및 출력
+ * 2. 산술 연산자
  */
 public class Calculator_2 {
 
