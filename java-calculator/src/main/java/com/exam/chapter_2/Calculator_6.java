@@ -3,7 +3,6 @@ package com.exam.chapter_2;
 import java.util.Scanner;
 
 public class Calculator_6 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -18,8 +17,8 @@ public class Calculator_6 {
         String[] operators = new String[tokens.length / 2];
 
         // 3. 연산자와 피연산자를 분리
-        for(int i = 0; i < tokens.length; i++) {
-            if(i % 2 == 0) {
+        for (int i = 0; i < tokens.length; i++) {
+            if (i % 2 == 0) {
                 operands[i / 2] = tokens[i];
             } else {
                 operators[i / 2] = tokens[i];
@@ -29,28 +28,30 @@ public class Calculator_6 {
         // 4. 순차적으로 연산 수행
         int result = calculate(operands, operators);
 
+
         // 5. 결과 출력
         System.out.println("결과 = " + result);
     }
 
-    private static int calculate(String[] operands, String[] operators) {
+    public static int calculate(String[] operands, String[] operators) {
         int result = Integer.parseInt(operands[0]);
 
-        for(int i = 0; i < operators.length; i++) {
+        for (int i = 0; i < operators.length; i++) {
             Operator operator = Operators.fromSymbol(operators[i]);
             int rightOperand = Integer.parseInt(operands[i + 1]);
 
-            // 중간 과정 출력
-            System.out.printf("%d %s %d = ", result, operator.symbol(), rightOperand);
-            // 추상화 하여 최종 결과를 반환하기
+            System.out.println(operator.getClass().getSimpleName() + " 연산 : " + result + " " + operator.symbol() + " " + rightOperand);
+
             result = operator.apply(result, rightOperand);
         }
+
         return result;
     }
 }
 
 interface Operator {
     int apply(int leftOperand, int rightOperand);
+
     String symbol();
 }
 
